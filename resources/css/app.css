@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    /* Colors ===================================*/
+    --primaryColor: #f04848;
+    --defaultTextColor: #ffffff;
+  
+    /* Colorful Gradient */
+    --introductionTitleGradient: linear-gradient(
+      -267deg,
+      #8e42f8 0%,
+      #36a9dd 25%,
+      #bedd3d 51%,
+      #ef49a2 75%,
+      #aa31da 100%
+    );
+  
+    /* Font and typography ===================================*/
+    --body-font: "Mukta", sans-serif;
+    --biggest-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: url('/public/BG.svg') no-repeat;
+    font-family: var(--body-font);
+    font-size: 62.5%; /* = 10px */
+    background-attachment: fixed;
+}
+::selection {
+    color: var(--defaultTextColor);
+    background-color: var(--primaryColor);
+    opacity: 0.6;
+}
+header.principal{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    color: var(--defaultTextColor);   
+}
+header.principal .title{
+    display: flex;
+    width: 5rem;
+    align-self: center;
+    align-items: center;    
+    justify-content: center;
+    color: var(--primaryColor);
+}
+header.principal .title h1{
+    font-size: var(--biggest-font-size);
+}
+header.principal .title::after {
+    content: '';
+    border: 1px solid var(--primaryColor);
+    border-radius: 1rem;
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    transform: matrix(0.93, -0.37, 0.37, 0.93, 0, 0);
+    left: -.5rem;
+    top: -.5rem;
+}
+header.principal nav{
+    position: relative;
+    display: flex;
+    width: 60%;
+    align-items: center;
+    align-self: center;
+    font-size: 1.3rem;    
+}
+header.principal nav a{
+    margin-left: 4rem;
+    font-weight: lighter;
+    transition: all 0.3s ease-in-out;
+}
+header.principal nav a:hover{
+    color: var(--primaryColor);
+}
+header.principal .icons{
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+    justify-self: center;
+    justify-items: center;
+    color: var(--primaryColor);
+}
+header.principal .icons a{
+    font-size: 2rem;
+    padding-left:0.5rem;
+}
+header.principal .icons a i {
+    transition: all 0.2s ease;
+}
+header.principal .icons a i:hover {
+border-bottom: 1px solid;
+}
+main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    height: 80vh;
+    width: 100%;
+}
+section.introduction{
+    color: var(--defaultTextColor);
+    margin-left: 10%;
+}
+section.introduction .introduction-title{
+    font-size: 3.5rem;
+    background-image: var(--introductionTitleGradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+section.introduction .description-home{
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+.link-arrow {
+    font-size: 1.1rem;
+    font-weight: lighter;
+    border: 1px solid #b1b1b1;
+    border-radius: 10px;
+    padding: 1.3rem 3.4rem;
+    width: fit-content;
+    color: var(--defaultTextColor);
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .link-arrow span {
+    display: inline-block;
+  }
+  .link-arrow img {
+    position: absolute;
+    right: -3.5rem;
+    transition: all 0.2s ease;
+  }
+  .link-arrow:hover img {
+    right: -4.2rem;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    color: var(--defaultTextColor);
+    padding-right: 5px;
+}
+  .box-icon{
+    display: flex;
+    width: 5rem;
+    align-self: center;
+    align-items: center;    
+    justify-content: center;
+    color: var(--primaryColor);
+    font-size: var(--biggest-font-size);
+  }
+  .box-icon::after {
+    content: '';
+    border: 1px solid var(--primaryColor);
+    border-radius: 1rem;
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    transform: matrix(0.93, -0.37, 0.37, 0.93, 0, 0);
+}
+.bx-menu{
+    display: none;
+}
+@media only screen and (max-width: 900px){
+    .bx-menu{
+        display: contents;
+    }
+    header.principal{
+        justify-content: space-between;
+    }
+    header.principal nav{
+        display: none;
+    }
+    header.principal nav.activate{
+        flex-direction: column;
+        display: flex;
+        position: absolute;
+        float: right;
+        right: -200px;
+        transition: all .5s linear;
+        transform: translateX(-200px);
+        margin-top: 12rem;
+        background: #191919a3;
+    }   
+    section.introduction .introduction-title{
+        font-size: 2.5rem;
+    }
+}
