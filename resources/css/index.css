@@ -1,0 +1,43 @@
+section.introduction{
+    display: flex;
+    color: var(--defaultTextColor);
+    margin-left: 10%;
+    align-self: center;
+    flex-direction: column;
+}
+section.introduction .introduction-title{
+    font-size: 3.5rem;
+    background-image: var(--introductionTitleGradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+section.introduction .description-home{
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+.link-arrow {
+    font-size: 1.1rem;
+    font-weight: lighter;
+    border: 1px solid #b1b1b1;
+    border-radius: 10px;
+    padding: 1.3rem 3.4rem;
+    width: fit-content;
+    color: var(--defaultTextColor);
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .link-arrow span {
+    display: inline-block;
+  }
+  .link-arrow img {
+    position: absolute;
+    right: -3.5rem;
+    transition: all 0.2s ease;
+  }
+  .link-arrow:hover img {
+    right: -4.2rem;
+  }
+  

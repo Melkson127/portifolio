@@ -1,15 +1,12 @@
 import { Link, Head } from '@inertiajs/react';
 import { PageProps, } from '@/types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Portifolio from '../Components/portifolio';
+import '../../css/index.css';
 export default function Welcome() {
-    var [menuState, setMenuState] = useState('')
-    function setMenu(){
-        if(menuState == 'activate'){
-            setMenuState('')
-        }else{
-            setMenuState('activate')
-        }
-    }
+    const [menuState, setMenuState] = useState(false)
+    const [page, setPage] = useState('')
+    
     return (
         <>
             <Head title="Welcome" />
@@ -17,29 +14,29 @@ export default function Welcome() {
                 <div className="title">
                     <h1>MA</h1>
                 </div>
-                <nav className={menuState}>
+                <nav className={menuState?'activate':''}>
                    
                         <a
-                            href={route('dashboard')}
+                            onClick={()=>setPage('')}
                             className=""
                         >
                             home
                         </a>
                         <a
-                            href={route('login')}
+                            onClick={()=>setPage('about')}
                             className=""
                         >
                             about
                         </a>
 
                         <a
-                            href={route('register')}
+                            onClick={()=>setPage('blog')}
                             className=""
                         >
                             blog
                         </a>
                         <a
-                            href={route('register')}
+                            onClick={()=>setPage('portifolio')}
                             className=""
                         >
                             portifolio
@@ -52,14 +49,14 @@ export default function Welcome() {
                     <a href="">
                         <i className='bx bxl-bx bxl-linkedin-square'></i>  
                     </a>
-                    <a href="#" onClick={setMenu}>
-                        <i className='bx bx-menu'></i>
+                    <a  onClick={()=>menuState?setMenuState(false):setMenuState(true)}>
+                        <i className={menuState?'bx bx-x':'bx bx-menu'}></i>
                     </a>
                     
                 </address>
             </header>   
             <main>
-                <section className='introduction'>
+                <section className={page == ''?'introduction':'inactive'}>
                     <h1 className='introduction-title'>    
                         Olá, eu sou Melkson Albuquerque, <br />
                         Sou um programador fullStack
@@ -68,15 +65,15 @@ export default function Welcome() {
                         Este site é destinado a apresentar um pouco sobre mim, e mostrar um pouco do meu trabalho
                     </h6>   
                     <a className="link-arrow" href="">
-						<span>My Recent Work</span>	
+						<span>Meus Projetos</span>	
 						<img src="/ArrowRight.svg" alt="" />
 					</a>
                 </section>
-                <portifolio></portifolio>
+                <Portifolio activate={page=='portifolio'} projects={[]}/>
 
             </main>
             <footer>    
-                <a className="mail box-icon" href='mailt:to'>
+                <a className="mail box-icon" href='mail:to'>
                     <i className='bx bx-envelope'></i>
                 </a>
                 <p>Todos os Direitos reservados, 2023   </p>

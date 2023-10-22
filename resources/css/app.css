@@ -78,6 +78,7 @@ header.principal nav a{
     margin-left: 4rem;
     font-weight: lighter;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 header.principal nav a:hover{
     color: var(--primaryColor);
@@ -93,9 +94,10 @@ header.principal .icons{
 header.principal .icons a{
     font-size: 2rem;
     padding-left:0.5rem;
+    z-index: 2;
 }
 header.principal .icons a i {
-    transition: all 0.2s ease;
+    transition: all 0.5s ease;
 }
 header.principal .icons a i:hover {
 border-bottom: 1px solid;
@@ -103,50 +105,10 @@ border-bottom: 1px solid;
 main {
     position: relative;
     display: flex;
-    align-items: center;
-    align-self: center;
     height: 80vh;
     width: 100%;
 }
-section.introduction{
-    color: var(--defaultTextColor);
-    margin-left: 10%;
-}
-section.introduction .introduction-title{
-    font-size: 3.5rem;
-    background-image: var(--introductionTitleGradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-section.introduction .description-home{
-    font-size: 1.4rem;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-}
-.link-arrow {
-    font-size: 1.1rem;
-    font-weight: lighter;
-    border: 1px solid #b1b1b1;
-    border-radius: 10px;
-    padding: 1.3rem 3.4rem;
-    width: fit-content;
-    color: var(--defaultTextColor);
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-  .link-arrow span {
-    display: inline-block;
-  }
-  .link-arrow img {
-    position: absolute;
-    right: -3.5rem;
-    transition: all 0.2s ease;
-  }
-  .link-arrow:hover img {
-    right: -4.2rem;
-  }
+
   footer {
     position: fixed;
     bottom: 0;
@@ -179,6 +141,9 @@ section.introduction .description-home{
 .bx-menu{
     display: none;
 }
+.inactive{
+    display: none;
+}
 @media only screen and (max-width: 900px){
     .bx-menu{
         display: contents;
@@ -187,20 +152,24 @@ section.introduction .description-home{
         justify-content: space-between;
     }
     header.principal nav{
-        display: none;
-    }
-    header.principal nav.activate{
+        position: absolute; 
         flex-direction: column;
         display: flex;
-        position: absolute;
         float: right;
-        right: -200px;
+        right: -40vw;
+        top: -23vh;
         transition: all .5s linear;
-        transform: translateX(-200px);
         margin-top: 12rem;
         background: #191919a3;
+        height: 100vh;
+        width: 40vw;
+        z-index: 1;
+        padding-top: 10vh;
+    }
+    header.principal nav.activate{
+        transform: translateX(-40vw);
     }   
     section.introduction .introduction-title{
-        font-size: 2.5rem;
+        font-size: 1rem;
     }
 }
