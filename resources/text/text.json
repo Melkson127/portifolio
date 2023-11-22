@@ -1,0 +1,30 @@
+{
+    "pt-br":{
+        "welcome":{
+            "introduction-title":"Olá, eu sou Melkson Albuquerque, Sou um programador fullStack",
+            "description-home": "Este site é destinado a apresentar um pouco sobre mim, e mostrar um pouco do me trabalho",
+            "arrow-button": "Meus Projetos"
+        },
+        "about": {
+            "title": "Sobre Mim",
+            "description": "Tenho conhecimentos em desenvolvimento fullstack com php utilizando o framework laravel e em javascript com react e angular no frontend e backend com express, tambem tenho conhecimento em banco de dados relacionais como o mysql e postgres. Conheci a área de software através de um curso técnico na etec jardim Ângela que me introduziu as tecnologias que sei hoje, e me deu oportunidade de desenvolver projetos em equipe, em destaque meu TCC onde participei do desenvolvimento de uma rede social onde trabalhei no desenvolvimento do app mobile, desenvolvendo a interface do app e fanzendo a comunicação do app com as APIs.",
+            "experiense": "Eu tenho experiência com:"
+
+        }
+
+    },
+    "us":{
+        "welcome":{
+            "introduction-title":"Hi, I'm Melkson Albuquerque, Sou um programador fullStack",
+            "description-home": "Este site é destinado a apresentar um pouco sobre mim, e mostrar um pouco do me trabalho",
+            "arrow-button": "Meus Projetos"
+        },
+        "about": {
+            "title": "About-me",
+            "description": "Tenho conhecimentos em desenvolvimento fullstack com php utilizando o framework laravel e em javascript com react e angular no frontend e backend com express, tambem tenho conhecimento em banco de dados relacionais como o mysql e postgres. Conheci a área de software através de um curso técnico na etec jardim Ângela que me introduziu as tecnologias que sei hoje, e me deu oportunidade de desenvolver projetos em equipe, em destaque meu TCC onde participei do desenvolvimento de uma rede social onde trabalhei no desenvolvimento do app mobile, desenvolvendo a interface do app e fanzendo a comunicação do app com as APIs.",
+            "experiense": "I have experiense with:"
+
+        }
+
+    }
+}

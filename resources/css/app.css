@@ -66,6 +66,7 @@ header.principal .title::after {
     left: -.5rem;
     top: -.5rem;
 }
+
 header.principal nav{
     position: relative;
     display: flex;
@@ -105,8 +106,9 @@ border-bottom: 1px solid;
 main {
     position: relative;
     display: flex;
-    height: 80vh;
     width: 100%;
+    min-height: 80vh;
+    padding-bottom: 2rem;
 }
 
   footer {
@@ -144,7 +146,49 @@ main {
 .inactive{
     display: none;
 }
+section.page{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    left: -10%;
+    transition: all .2s linear;
+}
+.pageAnimation{
+    transform: translateX(10%);
+}
+section.page .title{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 10%;
+    text-align: center;
+    font-size: 4.5rem;
+}
+section.page .title h1{
+    position: relative;
+    rotate: -90deg;
+    height: fit-content;
+    width: fit-content;
+    color: var(--defaultTextColor);    
+    font-weight: lighter;
+}
+section.page .title h1::after{
+    position: absolute;
+    content: '';
+    width: 10rem;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--primaryColor);
+    bottom: 0;
+    right: -2rem;
+}
 @media only screen and (max-width: 900px){
+    section.page .title{
+        display: none;
+    }
     .bx-menu{
         display: contents;
     }

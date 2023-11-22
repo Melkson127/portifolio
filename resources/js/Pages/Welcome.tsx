@@ -1,7 +1,8 @@
 import { Link, Head } from '@inertiajs/react';
 import { PageProps, } from '@/types';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Portifolio from '../Components/portifolio';
+import About from '../Components/about';
 import '../../css/index.css';
 export default function Welcome() {
     const [menuState, setMenuState] = useState(false)
@@ -64,12 +65,13 @@ export default function Welcome() {
                     <h6 className='description-home'>
                         Este site é destinado a apresentar um pouco sobre mim, e mostrar um pouco do meu trabalho
                     </h6>   
-                    <a className="link-arrow" href="">
+                    <a className="link-arrow" href="#" onClick={()=>setPage('portifolio')}>
 						<span>Meus Projetos</span>	
 						<img src="/ArrowRight.svg" alt="" />
 					</a>
                 </section>
-                <Portifolio activate={page=='portifolio'} projects={[]}/>
+                {page == 'portifolio'?(<Portifolio activate={true} projects={[]}/>):(<></>)}
+                {page == 'about'?(<About activate={true} />):(<></>)}
 
             </main>
             <footer>    
